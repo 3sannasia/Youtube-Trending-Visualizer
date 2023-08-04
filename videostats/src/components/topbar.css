@@ -1,0 +1,23 @@
+.barContainer {
+    display: flex;
+    background: var(--basecolor);
+    font-size: 20px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    gap: 12px;
+    justify-content: space-between;
+    top: 0;
+    z-index: 4;
+    height: 80px;
+}
+
+.baralltabscontainer {
+    display: inline-flex;
+    margin: 1vw;
+    gap: 0 1vw;
+    justify-content: space-between;
+}
+
+
+/*color: #e87121;*/

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename = 'script.js') }}"
+    ></script>
+  </head>
+
+  <!-- CREATE TABLE Tags(
+    `TagsID` CHAR(64),
+    `Name` TEXT NOT NULL,
+    `NumVid` BIGINT,
+    `NumChannel` BIGINT,
+    primary key(`TagsID`)
+); -->
+
+  <body>
+    <h1>Insertion</h1>
+    <p>Insert to database</p>
+    <input
+      type="text"
+      placeholder="(TagsID, Name, NumVid, NumChannel)"
+      id="myInput"
+    />
+
+    <form action="" id="loginForm">
+      <h1>TESTING FORM</h1>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        placeholder="Enter your Username..."
+      />
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        placeholder="Enter your Password..."
+      />
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      let loginForm = document.getElementById("loginForm");
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+
+        if (username.value == "" || password.value == "") {
+          alert("Ensure you input a value in both fields!");
+        } else {
+          // perform operation with form input
+          alert("This form has been successfully submitted!");
+          console.log(
+            `This form has a username of ${username.value} and password of ${password.value}`
+          );
+
+          username.value = "";
+          password.value = "";
+        }
+      });
+    </script>
+
+    <h1>Search</h1>
+    <p>Search from database</p>
+    <!-- Need to replace this with the sql query  -->
+    <label for="cars">Select a user:</label>
+    <select name="cars" id="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+
+    <h1>Update</h1>
+    <p>Update data from database</p>
+    <form>
+      <label for="fname">TagID:</label><br />
+      <input type="text" id="fname" name="fname" /><br />
+      <label for="lname">Name:</label><br />
+      <input type="text" id="lname" name="lname" /><br />
+      <label for="fname">NumVid:</label><br />
+      <input type="text" id="fname" name="fname" /><br />
+      <label for="lname">NumChannel:</label><br />
+      <input type="text" id="lname" name="lname" />
+      <br /><br />
+    </form>
+
+    <h1>Delete</h1>
+    <p>Delete data from database</p>
+    <input type="text" placeholder="TagID to delete" id="myInput" />
+    <button type="button" onclick="getInputValue();">Delete</button>
+
+    <script>
+      function getInputValue() {
+        // Selecting the input element and get its value
+        var inputVal = document.getElementById("myInput").value;
+        // alert(inputVal); REPLACE WITH INSERTION?
+      }
+    </script>
+
+    <h1>Advance SQL</h1>
+    <p>
+      SELECT SUM(v.Views),t.Name <br />
+      FROM Describes d JOIN Videos v ON(d.VideoID=v.VideoID) JOIN Tags t ON
+      (d.TagsID=t.TagsID)<br />
+      GROUP BY d.TagsID,t.Name <br />
+      ORDER BY SUM(v.Views) DESC<br />
+      LIMIT 15;<br />
+      <input type="button" onclick="sendQuery(1)" value="Try query" />
+    </p>
+    <p>
+      SELECT v.VideoTitle, c.ChannelName <br />
+      FROM Videos v JOIN Channels c ON (c.ChannelID = v.ChannelID) <br />
+      WHERE v.VideoID IN (SELECT VideoID FROM Tags t JOIN Describes d ON
+      (d.TagsID=t.TagsID) WHERE t.Name LIKE "funny") AND v.Likes > 100 <br />
+      ORDER BY v.Views DESC <br />
+      LIMIT 15;<br />
+      <input type="button" onclick="sendQuery(2)" value="Try query" />
+    </p>
+  </body>
+</html>

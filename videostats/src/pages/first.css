@@ -1,0 +1,39 @@
+.header {
+    font-size: 30px;
+    margin: 20px 0px;
+}
+.row {
+    display: flex;
+    align-items: center;
+}
+.search{
+    background-color: var(--basecolor);
+    color: var(--textcolor);
+    height: 40px;
+    width: 6vw;
+    margin: 0.75vw;
+    font-size: 15px;
+    border: none;
+}
+
+.button{
+    align-self: center;
+    background-color: var(--basecolor);
+    color: var(--textcolor);
+    margin: 0.75vw;
+    padding: 10px 10px;
+    font-size: 20px;
+    border: none;
+}
+.button:hover{
+    color: var(--hovercolor);
+}
+
+.output{
+    color: var(--basecolor);
+    height: 40px;
+    width: 6vw;
+    margin: 0.75vw;
+    font-size: 15px;
+    border: none;
+}

@@ -1,0 +1,15 @@
+.bartabcontainer {
+    align-items: center;
+}
+
+.bartab {
+    color: var(--textcolor);
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+}
+
+.bartab:hover {
+    color: var(--hovercolor);
+    text-decoration: none;
+}
