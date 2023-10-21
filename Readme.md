@@ -6,7 +6,7 @@ The project will revolve around analyzing what is being fed as content to differ
 Specifically using Likes, Dislikes, Video Descriptions, Video Descriptions, Tags, Views, and much more to discern public reaction (acceptance and angry pushback). This will make a database that will store information that can figure out what each country is classified as in terms of its subject approval and disapproval. These trends will be our focus.
 
 ## Structure
-We are essentially displaying data like Likes, Views, etc for individual videos, and the number of videos for tags in certain time periods, viewcount progressions over months for certain regions, and viewcounts percentages split by region. A Web UI is provided for CRUD (create, replace, update, delete) on the database.
+I am displaying data like Likes, Views, etc for individual videos, and the number of videos for tags in certain time periods, viewcount progressions over months for certain regions, and viewcounts percentages split by region. A Web UI is provided for CRUD (create, replace, update, delete) on the database.
 
 ### Tech Stack -> Javascript/HTML/CSS -> Flask -> Google Cloud Hosted SQL Database
 
